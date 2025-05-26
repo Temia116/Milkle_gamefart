@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cmrxvmhi6bkvg"]
+[gd_scene load_steps=2 format=3 uid="uid://cmrxvmhi6bkvg"]
+
+[ext_resource type="Script" uid="uid://b6xeaxipt2hxm" path="res://title.gd" id="1_y7k74"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -7,16 +9,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y7k74")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 20.3294
-offset_top = 4.9252
-offset_right = 60.3294
-offset_bottom = 44.9252
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 84.0
+offset_bottom = 104.0
+scale = Vector2(6.4, 6.4)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="PLAY" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "PLAY
+"
+
+[node name="SETTINGS" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="EXIT" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT
+"
