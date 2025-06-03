@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmrxvmhi6bkvg"]
+[gd_scene load_steps=5 format=3 uid="uid://cmrxvmhi6bkvg"]
 
 [ext_resource type="Script" uid="uid://b6xeaxipt2hxm" path="res://title.gd" id="1_y7k74"]
 [ext_resource type="Texture2D" uid="uid://dj2vlqd6yaxmf" path="res://Game assets/istockphoto-1248898329-612x612.jpg" id="2_kpexm"]
 [ext_resource type="Texture2D" uid="uid://bfu16kubsdvax" path="res://Game assets/download.png" id="3_3xoar"]
+[ext_resource type="Texture2D" uid="uid://cyo7nri8x17ih" path="res://Game assets/posters-3d-cartoon-cute-yellow-ball.jpg.jpg" id="4_3xoar"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -18,11 +19,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.005
 anchor_bottom = 0.005
-offset_left = 269.0
-offset_top = 167.76
-offset_right = 393.0
-offset_bottom = 268.76
-scale = Vector2(4, 4)
+offset_left = 390.0
+offset_top = 152.76
+offset_right = 551.0
+offset_bottom = 307.76
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -55,3 +56,12 @@ offset_top = 132.0
 offset_right = 1279.0
 offset_bottom = 682.0
 texture = ExtResource("3_3xoar")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 138.0
+offset_right = 244.0
+offset_bottom = 642.0
+texture = ExtResource("4_3xoar")
+expand_mode = 1
