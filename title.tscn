@@ -14,54 +14,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y7k74")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.005
-anchor_bottom = 0.005
-offset_left = 390.0
-offset_top = 152.76
-offset_right = 551.0
-offset_bottom = 307.76
-scale = Vector2(2, 2)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="PLAY" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "PLAY
-"
-
-[node name="SETTINGS" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "SETTINGS"
-
-[node name="EXIT" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "EXIT
-"
-
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 0
-offset_right = 1146.0
-offset_bottom = 642.0
+offset_right = 1019.0
+offset_bottom = 763.0
 texture = ExtResource("2_kpexm")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 845.0
-offset_top = 132.0
-offset_right = 1279.0
-offset_bottom = 682.0
+offset_left = 719.0
+offset_top = 256.0
+offset_right = 1153.0
+offset_bottom = 806.0
 texture = ExtResource("3_3xoar")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 138.0
-offset_right = 244.0
-offset_bottom = 642.0
+offset_top = 137.0
+offset_right = 240.0
+offset_bottom = 641.0
 texture = ExtResource("4_3xoar")
 expand_mode = 1
+
+[node name="PLAY" type="Button" parent="."]
+layout_mode = 2
+offset_left = 313.0
+offset_top = 170.0
+offset_right = 491.025
+offset_bottom = 201.0
+scale = Vector2(2.5, 2.5)
+text = "PLAY
+"
+
+[node name="SETTINGS" type="Button" parent="."]
+layout_mode = 2
+offset_left = 314.0
+offset_top = 247.0
+offset_right = 492.0
+offset_bottom = 278.0
+scale = Vector2(2.5, 2.5)
+text = "SETTINGS"
+
+[node name="EXIT" type="Button" parent="."]
+layout_mode = 2
+offset_left = 313.0
+offset_top = 323.0
+offset_right = 491.0
+offset_bottom = 354.0
+scale = Vector2(2.5, 2.5)
+text = "EXIT
+"
+
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]

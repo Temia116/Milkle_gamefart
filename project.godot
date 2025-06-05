@@ -14,3 +14,8 @@ config/name="milk ball s"
 run/main_scene="uid://cmrxvmhi6bkvg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
