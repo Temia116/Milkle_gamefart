@@ -1,13 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4kdt8ofi1v52"]
+[gd_scene load_steps=2 format=3 uid="uid://d4kdt8ofi1v52"]
 
-[ext_resource type="Script" uid="uid://cgupchcfb30po" path="res://cannon.gd" id="1_i10un"]
-[ext_resource type="Texture2D" uid="uid://dj2vlqd6yaxmf" path="res://Game assets/istockphoto-1248898329-612x612.jpg" id="2_23j6s"]
+[ext_resource type="PackedScene" uid="uid://d4kdt8ofi1v52" path="res://cannon.tscn" id="1_i10un"]
 
-[node name="Cannon" type="Node2D"]
-script = ExtResource("1_i10un")
-
-[node name="Cannon placeholder" type="Sprite2D" parent="."]
-position = Vector2(632, 25)
-scale = Vector2(0.147672, 0.147672)
-texture = ExtResource("2_23j6s")
-offset = Vector2(0, 4)
+[node name="Cannon" instance=ExtResource("1_i10un")]
