@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://chhx0225axigh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+
+[node name="Ball" type="Node2D"]
+
+[node name="Ball" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_cbx31")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
