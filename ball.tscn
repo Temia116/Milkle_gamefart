@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://chhx0225axigh"]
+[gd_scene load_steps=4 format=3 uid="uid://chhx0225axigh"]
+
+[ext_resource type="Texture2D" uid="uid://dsplrukavyatp" path="res://Game assets/BLACK BALL.png" id="1_x8fbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x8fbi"]
+bounce = 0.7
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+radius = 8.06226
 
 [node name="Ball" type="Node2D"]
 
 [node name="Ball" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_x8fbi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_cbx31")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(0.503906, 0.503906)
+texture = ExtResource("1_x8fbi")
