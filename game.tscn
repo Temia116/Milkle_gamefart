@@ -11,6 +11,7 @@ size = Vector2(19, 1030.5)
 script = ExtResource("1_80nbo")
 
 [node name="Launcher" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(-88, 1)
 
 [node name="Peg" parent="." instance=ExtResource("3_fc0e3")]
 position = Vector2(390, 270)
