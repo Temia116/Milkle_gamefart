@@ -17,12 +17,12 @@ script = ExtResource("1_5v8ap")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 174.0
-offset_right = 964.0
-offset_bottom = 228.0
+offset_left = 226.0
+offset_top = 160.0
+offset_right = 752.0
+offset_bottom = 222.0
 theme_override_font_sizes/font_size = 35
-text = "WORK IN PROGRESS GO AWAY OR SIT ON MY FACE
+text = "WORK IN PROGRESS GO AWAY 
 
 "
 
@@ -31,10 +31,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.019
 anchor_right = -0.019
-offset_left = 358.456
-offset_top = 256.0
-offset_right = 709.456
-offset_bottom = 316.0
+offset_left = 329.456
+offset_top = 255.0
+offset_right = 680.456
+offset_bottom = 332.0
 theme_override_font_sizes/font_size = 50
 text = "GO BACK"
 

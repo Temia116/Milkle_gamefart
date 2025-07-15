@@ -1,6 +1,7 @@
+# Peg.gd - Fixed string quotes
 extends StaticBody2D
 
-@export var is_orange: bool = false  # Orange pegs are targets
+@export var is_orange: bool = false
 @export var points: int = 100
 var is_hit: bool = false
 
@@ -27,8 +28,14 @@ func hit_by_ball():
 	# Disable collision
 	collision.disabled = true
 	
-	# Award points (connect to game manager)
-	GameManager.add_score(points)
+	# Award points
+	var game_manager = get_tree().get_first_node_in_group("game_manager")
+	if game_manager:
+		game_manager.add_score(points)
+	
+	# Notify that peg was destroyed
+	if game_manager:
+		game_manager.peg_destroyed(is_orange)
 	
 	# Remove after animation
 	tween.finished.connect(func(): queue_free())
