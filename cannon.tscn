@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://h5f5t0p3fjlq"]
 
-[ext_resource type="Script" uid="uid://cgupchcfb30po" path="res://cannon.gd" id="1_23j6s"]
+[ext_resource type="Script" uid="uid://dtau2mhuevidi" path="res://cannon.gd" id="1_23j6s"]
 [ext_resource type="Texture2D" uid="uid://c8k5kyhj1fb5p" path="res://Game assets/RED BALL.png" id="2_23j6s"]
 [ext_resource type="PackedScene" uid="uid://chhx0225axigh" path="res://ball.tscn" id="2_72ky0"]
 
 [node name="Launcher" type="Node2D"]
+position = Vector2(523, 28)
 script = ExtResource("1_23j6s")
 ball_scene = ExtResource("2_72ky0")
 
-[node name="Shooter" type="Sprite2D" parent="."]
-position = Vector2(582, 31)
+[node name="CannonSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.99449, 1.99449)
 texture = ExtResource("2_23j6s")
 
 [node name="AimLine" type="Line2D" parent="."]
+points = PackedVector2Array(201, 655)
 
 [node name="TrajectoryLine" type="Line2D" parent="."]
