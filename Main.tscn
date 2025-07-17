@@ -11,6 +11,12 @@ size = Vector2(19.5, 1171)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_cm0pq")
 
+[node name="Peg5" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(413, 619)
+
+[node name="Peg6" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(585, 558)
+
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_lgr22")
 
@@ -32,3 +38,9 @@ shape = SubResource("RectangleShape2D_7jktm")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1033.75, 501.5)
 shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Peg3" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(284, 527)
+
+[node name="Peg4" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(430, 483)

@@ -8,6 +8,7 @@
 position = Vector2(523, 28)
 script = ExtResource("1_23j6s")
 ball_scene = ExtResource("2_72ky0")
+max_angle = 360.0
 
 [node name="CannonSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.99449, 1.99449)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr7l01oibe618"]
 
-[ext_resource type="Script" path="res://title.gd" id="1_y7k74"]
+[ext_resource type="Script" uid="uid://c0jfantnyf045" path="res://title.gd" id="1_y7k74"]
 [ext_resource type="Texture2D" uid="uid://dj2vlqd6yaxmf" path="res://Game assets/istockphoto-1248898329-612x612.jpg" id="2_kpexm"]
 [ext_resource type="Texture2D" uid="uid://bfu16kubsdvax" path="res://Game assets/download.png" id="3_3xoar"]
 [ext_resource type="Texture2D" uid="uid://cyo7nri8x17ih" path="res://Game assets/posters-3d-cartoon-cute-yellow-ball.jpg.jpg" id="4_3xoar"]
