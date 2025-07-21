@@ -44,3 +44,21 @@ position = Vector2(284, 527)
 
 [node name="Peg4" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(430, 483)
+
+[node name="Peg7" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(551, 624)
+
+[node name="Peg8" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(723, 563)
+
+[node name="Peg9" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(301, 459)
+
+[node name="Peg10" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(407, 404)
+
+[node name="Peg11" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(422, 532)
+
+[node name="Peg12" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(568, 488)
