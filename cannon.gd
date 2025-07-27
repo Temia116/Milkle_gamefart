@@ -42,6 +42,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and can_shoot:
 			shoot_ball()
+			get_viewport().set_input_as_handled()
 
 func update_aiming():
 	mouse_position = get_global_mouse_position()
