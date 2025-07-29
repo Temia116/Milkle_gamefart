@@ -21,7 +21,7 @@ position = Vector2(585, 558)
 script = ExtResource("4_lgr22")
 
 [node name="Launcher" parent="." instance=ExtResource("2_fos0i")]
-position = Vector2(490, 30)
+position = Vector2(499, 240)
 
 [node name="Peg" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(163, 454)
@@ -62,3 +62,39 @@ position = Vector2(422, 532)
 
 [node name="Peg12" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(568, 488)
+
+[node name="Peg13" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(490, 786)
+
+[node name="Peg14" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(662, 725)
+
+[node name="Peg15" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(240, 621)
+
+[node name="Peg16" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(346, 566)
+
+[node name="Peg17" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(361, 694)
+
+[node name="Peg18" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(507, 650)
+
+[node name="Peg19" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(628, 791)
+
+[node name="Peg20" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(800, 730)
+
+[node name="Peg21" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(378, 626)
+
+[node name="Peg22" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(484, 571)
+
+[node name="Peg23" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(499, 699)
+
+[node name="Peg24" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(645, 655)
