@@ -17,6 +17,7 @@ scale = Vector2(3.18715, 3.18715)
 texture = ExtResource("2_23j6s")
 
 [node name="AimLine" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(201, 655)
 
 [node name="TrajectoryLine" type="Line2D" parent="."]
