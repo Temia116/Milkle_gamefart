@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://beyuntlg5sm6f"]
+
+[ext_resource type="Script" uid="uid://bfe3x88fqx16j" path="res://peg_break_particles.gd" id="1_lm0vn"]
+
+[node name="PegBreakParticles" type="Node2D"]
+script = ExtResource("1_lm0vn")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.8
+
+[node name="SparkleParticles" type="GPUParticles2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

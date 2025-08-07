@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d08wf7w5ylnmd"]
+[gd_scene load_steps=5 format=3 uid="uid://d08wf7w5ylnmd"]
 
 [ext_resource type="Script" uid="uid://b0uxw6sgcs3a3" path="res://peg.gd" id="1_1pwoe"]
 [ext_resource type="Texture2D" uid="uid://0o6mgth4mtyg" path="res://Game assets/GREEN BALL.png" id="1_y34qd"]
@@ -6,13 +6,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1pwoe"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cavuh"]
+radius = 15.0
+
 [node name="Peg" type="Node2D" groups=["Peg"]]
 
 [node name="Peg" type="StaticBody2D" parent="."]
 script = ExtResource("1_1pwoe")
+is_orange = null
+points = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Peg"]
 shape = SubResource("CircleShape2D_1pwoe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Peg"]
 texture = ExtResource("1_y34qd")
+
+[node name="HitArea" type="Area2D" parent="Peg"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg/HitArea"]
+shape = SubResource("CircleShape2D_cavuh")
