@@ -29,11 +29,9 @@ func hit_by_ball():
 	
 	is_hit = true
 	
-	# Particle effects (customize as needed)
-	spawn_break_particles()
+	# Particle effects (custom
 	
 	# Sound effect
-	AudioManager.play_sound("peg_hit")  # Adjust to your audio system
 	
 	# Visual feedback
 	var tween = create_tween()
@@ -53,17 +51,3 @@ func hit_by_ball():
 	
 	# Remove after animation
 	tween.finished.connect(func(): queue_free())
-
-func spawn_break_particles():
-	# Example particle spawn - customize based on peg type
-	var particle_scene = preload("res://effects/PegBreakParticles.tscn")  # Adjust path
-	if particle_scene:
-		var particles = particle_scene.instantiate()
-		get_parent().add_child(particles)
-		particles.global_position = global_position
-		
-		# Customize particles based on peg color
-		if is_orange:
-			particles.modulate = Color.ORANGE
-		else:
-			particles.modulate = Color.BLUE
