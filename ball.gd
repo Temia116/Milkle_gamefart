@@ -1,28 +1,28 @@
 extends RigidBody2D
+
 @export var bounce_damping: float = 0.8
 @export var max_bounces: int = 50
 @export var lifetime: float = 30.0
+
 var bounce_count: int = 0
 var initial_speed: float
 
 func _ready():
-	# IMPORTANT: Set these physics properties
 	gravity_scale = 1.0
 	
-	# Create physics material
+	# Create and assign physics material for bounce
 	var physics_material = PhysicsMaterial.new()
 	physics_material.bounce = 0.7
-	physics_material.friction = 0.1  # Low friction for smooth movement
-	physics_material = physics_material
+	physics_material.friction = 0.1
+	physics_material_override = physics_material
 	
-	# Make sure the ball starts awake
-	sleeping = false
-	can_sleep = false  # Prevent sleeping initially
+	# Enable contact monitoring
+	contact_monitor = true
+	max_contacts_reported = 10
 	
 	# Connect collision signal
 	body_entered.connect(_on_body_entered)
 	
-	# Lifetime timer
 	var timer = Timer.new()
 	timer.wait_time = lifetime
 	timer.one_shot = true
@@ -31,32 +31,14 @@ func _ready():
 	timer.start()
 
 func launch(velocity: Vector2):
-	print("=== BALL LAUNCH DEBUG ===")
-	print("Launch velocity: ", velocity)
-	print("Velocity magnitude: ", velocity.length())
-	print("Ball position: ", global_position)
-	print("Ball gravity_scale: ", gravity_scale)
-	print("Ball mass: ", mass)
-	print("Ball sleeping: ", sleeping)
-	
-	# CRITICAL: Make sure ball is not sleeping
-	sleeping = false
-	
-	# Apply the velocity
 	linear_velocity = velocity
 	initial_speed = velocity.length()
-	
-	# Verify the velocity was set
-	print("Linear velocity after setting: ", linear_velocity)
-	print("========================")
-	
-	# Optional: Add a small delay before enabling sleep
-	await get_tree().create_timer(0.5).timeout
-	can_sleep = true
 
 func _on_body_entered(body):
 	bounce_count += 1
+	print("Ball hit: ", body.name)
 	
+	# Check if it's a peg and call hit_by_ball
 	if body.has_method("hit_by_ball"):
 		body.hit_by_ball()
 	
