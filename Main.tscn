@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1xgpfflybmuw"]
+[gd_scene load_steps=10 format=3 uid="uid://c1xgpfflybmuw"]
 
 [ext_resource type="Script" uid="uid://chpo1no1j1qm" path="res://game.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://h5f5t0p3fjlq" path="res://cannon.tscn" id="2_fos0i"]
@@ -6,48 +6,28 @@
 [ext_resource type="Script" uid="uid://hegvoy5de6w2" path="res://GameManager.gd" id="4_lgr22"]
 [ext_resource type="Texture2D" uid="uid://bkflc54rt5qs2" path="res://Game assets/BACKGROUND.jpeg" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://0n6dgtjx4i3u" path="res://ball_catcher.gd" id="6_3dxm6"]
-[ext_resource type="Texture2D" uid="uid://dtq00mtab4if6" path="res://Game assets/Green ball catcher.png" id="7_03owx"]
-[ext_resource type="Texture2D" uid="uid://dqph28k4luatb" path="res://Game assets/Red ball catcher.png" id="8_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://2eka4i7agowb" path="res://Game assets/Yellow ball catcher.png" id="9_20pc6"]
+[ext_resource type="PackedScene" uid="uid://d0ys6lscru6qg" path="res://bucket.tscn" id="8_trn2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(19.5, 1171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgr22"]
-size = Vector2(3820, 62)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vvyt"]
-size = Vector2(39, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6i3y"]
-size = Vector2(38, 29)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2ibq"]
-size = Vector2(38, 29)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4qnp"]
-size = Vector2(42, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpfj3"]
-size = Vector2(2, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc1dx"]
-size = Vector2(2, 40)
+size = Vector2(4089, 62)
 
 [node name="Main" type="Node2D" groups=["Peg"]]
 script = ExtResource("1_cm0pq")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -12
-position = Vector2(510, 559)
-scale = Vector2(0.171333, 0.277)
+position = Vector2(965.001, 559)
+scale = Vector2(0.323, 0.277)
 texture = ExtResource("5_fos0i")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("4_lgr22")
 
 [node name="Launcher" parent="." instance=ExtResource("2_fos0i")]
-position = Vector2(499, 240)
+position = Vector2(950, 240)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -56,7 +36,7 @@ position = Vector2(-7.5, 456)
 shape = SubResource("RectangleShape2D_7jktm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1033.75, 501.5)
+position = Vector2(1931, 486)
 shape = SubResource("RectangleShape2D_7jktm")
 
 [node name="Peg" parent="." instance=ExtResource("3_3dxm6")]
@@ -308,33 +288,6 @@ position = Vector2(560, 750)
 [node name="Peg83" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(200, 750)
 
-[node name="Peg84" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(230, 810)
-
-[node name="Peg85" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(350, 810)
-
-[node name="Peg86" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(410, 810)
-
-[node name="Peg87" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(290, 810)
-
-[node name="Peg88" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(470, 810)
-
-[node name="Peg89" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(590, 810)
-
-[node name="Peg90" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(650, 810)
-
-[node name="Peg91" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(530, 810)
-
-[node name="Peg92" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(170, 810)
-
 [node name="Peg93" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(740, 630)
 
@@ -343,9 +296,6 @@ position = Vector2(710, 690)
 
 [node name="Peg95" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(740, 750)
-
-[node name="Peg96" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(710, 810)
 
 [node name="Peg97" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(800, 630)
@@ -356,9 +306,6 @@ position = Vector2(770, 690)
 [node name="Peg99" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(800, 750)
 
-[node name="Peg100" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(770, 810)
-
 [node name="Peg101" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(860, 630)
 
@@ -367,9 +314,6 @@ position = Vector2(830, 690)
 
 [node name="Peg103" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(860, 750)
-
-[node name="Peg104" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(830, 810)
 
 [node name="Peg105" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(920, 630)
@@ -380,9 +324,6 @@ position = Vector2(890, 690)
 [node name="Peg107" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(920, 750)
 
-[node name="Peg108" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(890, 810)
-
 [node name="Peg109" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(140, 630)
 
@@ -392,53 +333,305 @@ position = Vector2(110, 690)
 [node name="Peg111" parent="." instance=ExtResource("3_3dxm6")]
 position = Vector2(140, 750)
 
-[node name="Peg112" parent="." instance=ExtResource("3_3dxm6")]
-position = Vector2(110, 810)
-
 [node name="BallCatcher" type="Area2D" parent="."]
 script = ExtResource("6_3dxm6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BallCatcher"]
-position = Vector2(477, 1235)
+position = Vector2(611.5, 1235)
 shape = SubResource("RectangleShape2D_lgr22")
 
-[node name="Yellow box catcher" type="CollisionShape2D" parent="BallCatcher"]
-position = Vector2(-587.5, 161)
-shape = SubResource("RectangleShape2D_5vvyt")
+[node name="Peg84" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1100, 400)
 
-[node name="Green box catcher" type="CollisionShape2D" parent="BallCatcher"]
-position = Vector2(-482, 160.5)
-shape = SubResource("RectangleShape2D_c6i3y")
+[node name="Peg85" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1220, 400)
 
-[node name="Red ball catcher" type="CollisionShape2D" parent="BallCatcher"]
-position = Vector2(-533, 160.5)
-shape = SubResource("RectangleShape2D_c2ibq")
+[node name="Peg86" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1280, 400)
 
-[node name="Green catcher" type="Sprite2D" parent="."]
-position = Vector2(-482, 156)
-scale = Vector2(0.13125, 0.13125)
-texture = ExtResource("7_03owx")
+[node name="Peg87" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1160, 400)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Peg88" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1340, 400)
 
-[node name="Red catcher" type="Sprite2D" parent="Area2D"]
-position = Vector2(-533, 156)
-scale = Vector2(0.131, 0.131)
-texture = ExtResource("8_wkp8b")
+[node name="Peg89" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1460, 400)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-588, 176)
-shape = SubResource("RectangleShape2D_j4qnp")
+[node name="Peg90" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1520, 400)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-608, 155)
-shape = SubResource("RectangleShape2D_fpfj3")
+[node name="Peg91" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1400, 400)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-568, 155)
-shape = SubResource("RectangleShape2D_sc1dx")
+[node name="Peg92" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1040, 400)
 
-[node name="Yellow catcher" type="Sprite2D" parent="."]
-position = Vector2(-588, 156)
-scale = Vector2(0.131, 0.131)
-texture = ExtResource("9_20pc6")
+[node name="Peg96" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1070, 460)
+
+[node name="Peg100" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1190, 460)
+
+[node name="Peg104" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1250, 460)
+
+[node name="Peg108" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1130, 460)
+
+[node name="Peg112" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1310, 460)
+
+[node name="Peg113" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1430, 460)
+
+[node name="Peg114" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1490, 460)
+
+[node name="Peg115" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1370, 460)
+
+[node name="Peg116" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1010, 460)
+
+[node name="Peg117" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1100, 520)
+
+[node name="Peg118" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1220, 520)
+
+[node name="Peg119" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1280, 520)
+
+[node name="Peg120" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1160, 520)
+
+[node name="Peg121" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1340, 520)
+
+[node name="Peg122" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1460, 520)
+
+[node name="Peg123" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1520, 520)
+
+[node name="Peg124" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1400, 520)
+
+[node name="Peg125" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1040, 520)
+
+[node name="Peg126" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1070, 580)
+
+[node name="Peg127" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1190, 580)
+
+[node name="Peg128" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1250, 580)
+
+[node name="Peg129" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1130, 580)
+
+[node name="Peg130" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1310, 580)
+
+[node name="Peg131" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1430, 580)
+
+[node name="Peg132" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1490, 580)
+
+[node name="Peg133" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1370, 580)
+
+[node name="Peg134" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1010, 580)
+
+[node name="Peg135" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1580, 400)
+
+[node name="Peg136" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1550, 460)
+
+[node name="Peg137" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1580, 520)
+
+[node name="Peg138" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1550, 580)
+
+[node name="Peg139" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1640, 400)
+
+[node name="Peg140" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1610, 460)
+
+[node name="Peg141" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1640, 520)
+
+[node name="Peg142" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1610, 580)
+
+[node name="Peg143" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1700, 400)
+
+[node name="Peg144" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1670, 460)
+
+[node name="Peg145" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1700, 520)
+
+[node name="Peg146" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1670, 580)
+
+[node name="Peg147" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1760, 400)
+
+[node name="Peg148" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1730, 460)
+
+[node name="Peg149" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1760, 520)
+
+[node name="Peg150" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1730, 580)
+
+[node name="Peg151" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(980, 400)
+
+[node name="Peg152" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(950, 460)
+
+[node name="Peg153" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(980, 520)
+
+[node name="Peg154" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(950, 580)
+
+[node name="Peg155" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1100, 630)
+
+[node name="Peg156" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1220, 630)
+
+[node name="Peg157" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1280, 630)
+
+[node name="Peg158" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1160, 630)
+
+[node name="Peg159" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1340, 630)
+
+[node name="Peg160" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1460, 630)
+
+[node name="Peg161" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1520, 630)
+
+[node name="Peg162" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1400, 630)
+
+[node name="Peg163" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1040, 630)
+
+[node name="Peg164" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1070, 690)
+
+[node name="Peg165" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1190, 690)
+
+[node name="Peg166" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1250, 690)
+
+[node name="Peg167" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1130, 690)
+
+[node name="Peg168" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1310, 690)
+
+[node name="Peg169" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1430, 690)
+
+[node name="Peg170" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1490, 690)
+
+[node name="Peg171" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1370, 690)
+
+[node name="Peg172" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1010, 690)
+
+[node name="Peg173" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1100, 750)
+
+[node name="Peg174" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1220, 750)
+
+[node name="Peg175" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1280, 750)
+
+[node name="Peg176" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1160, 750)
+
+[node name="Peg177" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1340, 750)
+
+[node name="Peg178" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1460, 750)
+
+[node name="Peg179" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1520, 750)
+
+[node name="Peg180" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1400, 750)
+
+[node name="Peg181" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1040, 750)
+
+[node name="Peg182" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1580, 630)
+
+[node name="Peg183" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1550, 690)
+
+[node name="Peg184" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1580, 750)
+
+[node name="Peg185" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1640, 630)
+
+[node name="Peg186" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1610, 690)
+
+[node name="Peg187" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1640, 750)
+
+[node name="Peg188" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1700, 630)
+
+[node name="Peg189" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1670, 690)
+
+[node name="Peg190" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1700, 750)
+
+[node name="Peg191" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1760, 630)
+
+[node name="Peg192" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1730, 690)
+
+[node name="Peg193" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(1760, 750)
+
+[node name="Peg194" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(980, 630)
+
+[node name="Peg195" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(950, 690)
+
+[node name="Peg196" parent="." instance=ExtResource("3_3dxm6")]
+position = Vector2(980, 750)
+
+[node name="Bucket" parent="." instance=ExtResource("8_trn2v")]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0ys6lscru6qg"]
+
+[ext_resource type="Script" uid="uid://pqern1a6ftm" path="res://static_body_2d.gd" id="1_ghrs3"]
+[ext_resource type="Texture2D" uid="uid://2eka4i7agowb" path="res://Game assets/Yellow ball catcher.png" id="2_hdxih"]
+[ext_resource type="Texture2D" uid="uid://dtq00mtab4if6" path="res://Game assets/Green ball catcher.png" id="3_wlsrv"]
+[ext_resource type="Texture2D" uid="uid://dqph28k4luatb" path="res://Game assets/Red ball catcher.png" id="4_k837v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghrs3"]
+size = Vector2(144.5, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycy6c"]
+size = Vector2(144, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etf6t"]
+size = Vector2(8, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4fsb"]
+size = Vector2(8, 160.5)
+
+[node name="Bucket" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_ghrs3")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="Yellow box catcher" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(919.25, 953.5)
+shape = SubResource("RectangleShape2D_ghrs3")
+
+[node name="green box catcher" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(274.25, 953.5)
+shape = SubResource("RectangleShape2D_ghrs3")
+
+[node name="red box catcher" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(1510.25, 953.5)
+shape = SubResource("RectangleShape2D_ghrs3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1511, 1004)
+shape = SubResource("RectangleShape2D_ycy6c")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1435, 928)
+shape = SubResource("RectangleShape2D_etf6t")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1587, 928.25)
+shape = SubResource("RectangleShape2D_d4fsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(920, 1004)
+shape = SubResource("RectangleShape2D_ycy6c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(844, 928)
+shape = SubResource("RectangleShape2D_etf6t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(996, 928.25)
+shape = SubResource("RectangleShape2D_d4fsb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(274, 1004)
+shape = SubResource("RectangleShape2D_ycy6c")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(198, 928)
+shape = SubResource("RectangleShape2D_etf6t")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(350, 928.25)
+shape = SubResource("RectangleShape2D_d4fsb")
+
+[node name="Yellow catcher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(920, 928)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hdxih")
+
+[node name="Green catcher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(274, 928)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wlsrv")
+
+[node name="Red catcher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1511, 928)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_k837v")

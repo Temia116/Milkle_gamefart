@@ -18,51 +18,52 @@ script = ExtResource("1_y7k74")
 z_index = -1
 layout_mode = 0
 offset_left = -2.0
-offset_right = 1022.0
-offset_bottom = 774.0
+offset_right = 1917.0
+offset_bottom = 819.0
 texture = ExtResource("2_kpexm")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 719.0
-offset_top = 256.0
-offset_right = 1153.0
-offset_bottom = 806.0
+offset_left = 1606.0
+offset_top = 302.0
+offset_right = 2040.0
+offset_bottom = 852.0
 texture = ExtResource("3_3xoar")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 137.0
-offset_right = 240.0
-offset_bottom = 641.0
+offset_left = 106.0
+offset_top = 257.0
+offset_right = 346.0
+offset_bottom = 761.0
 texture = ExtResource("4_3xoar")
 expand_mode = 1
 
 [node name="PLAY" type="Button" parent="."]
 layout_mode = 2
-offset_left = 289.0
-offset_top = 223.0
-offset_right = 467.0
-offset_bottom = 254.0
+offset_left = 679.0
+offset_top = 394.0
+offset_right = 857.0
+offset_bottom = 425.0
 scale = Vector2(2.5, 2.5)
 text = "PLAY
 "
 
 [node name="SETTINGS" type="Button" parent="."]
 layout_mode = 2
-offset_left = 289.0
-offset_top = 301.0
-offset_right = 467.0
-offset_bottom = 332.0
+offset_left = 679.0
+offset_top = 472.0
+offset_right = 857.0
+offset_bottom = 503.0
 scale = Vector2(2.5, 2.5)
 text = "SETTINGS"
 
 [node name="EXIT" type="Button" parent="."]
 layout_mode = 2
-offset_left = 288.0
-offset_top = 377.0
-offset_right = 466.0
-offset_bottom = 408.0
+offset_left = 678.0
+offset_top = 548.0
+offset_right = 856.0
+offset_bottom = 579.0
 scale = Vector2(2.5, 2.5)
 text = "EXIT
 "
