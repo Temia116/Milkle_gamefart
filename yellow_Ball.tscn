@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://n5pj07jqq6lq"]
+
+[ext_resource type="Script" uid="uid://dbvshl1tjuwc0" path="res://yellow_Ball.gd" id="1_73txw"]
+[ext_resource type="Texture2D" uid="uid://bq657u1pqgar0" path="res://Game assets/YELLOW BALL.png" id="2_fjac4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6qng"]
+radius = 8.06226
+
+[node name="Yellow_ball" type="RigidBody2D"]
+script = ExtResource("1_73txw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q6qng")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.533203, 0.533203)
+texture = ExtResource("2_fjac4")

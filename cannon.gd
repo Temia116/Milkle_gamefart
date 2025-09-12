@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var ball_scene: PackedScene
+# Replace the single ball_scene with an array of different ball scenes
+@export var ball_scenes: Array[PackedScene] = []
 @export var ball_speed: float = 800.0
 @export var max_angle: float = 75.0
 @export var aim_line_length: float = 200.0
@@ -8,6 +9,8 @@ extends Node2D
 
 var can_shoot: bool = true
 var current_ball = null
+var current_ball_scene: PackedScene
+var next_ball_scene: PackedScene
 var aim_angle: float = 0.0
 var launch_position: Vector2
 var mouse_position: Vector2
@@ -15,11 +18,44 @@ var mouse_position: Vector2
 @onready var aim_line: Line2D = $AimLine
 @onready var trajectory_line: Line2D = $TrajectoryLine
 @onready var cannon: Sprite2D = $Cannon
+@onready var next_ball_preview: Sprite2D = $NextBallPreview
 
 func _ready():
 	launch_position = global_position
 	setup_aim_line()
 	setup_trajectory_line()
+	setup_next_ball_preview()
+	
+	# Initialize with random ball scenes
+	if ball_scenes.size() > 0:
+		current_ball_scene = get_random_ball_scene()
+		next_ball_scene = get_random_ball_scene()
+		update_preview_display()
+
+func setup_next_ball_preview():
+	if not next_ball_preview:
+		next_ball_preview = Sprite2D.new()
+		add_child(next_ball_preview)
+	
+	# Position preview ball (adjust as needed)
+	next_ball_preview.position = Vector2(60, -30)  # Top-right of launcher
+	next_ball_preview.scale = Vector2(0.7, 0.7)    # Slightly smaller
+
+func get_random_ball_scene() -> PackedScene:
+	if ball_scenes.size() == 0:
+		push_error("No ball scenes assigned!")
+		return null
+	return ball_scenes[randi() % ball_scenes.size()]
+
+func update_preview_display():
+	if next_ball_preview and next_ball_scene:
+		# Create a temporary instance to get its texture/appearance
+		var temp_ball = next_ball_scene.instantiate()
+		if temp_ball.has_node("Sprite2D"):
+			var sprite = temp_ball.get_node("Sprite2D")
+			next_ball_preview.texture = sprite.texture
+			next_ball_preview.modulate = sprite.modulate
+		temp_ball.queue_free()
 
 func _process(delta):
 	update_aiming()
@@ -27,8 +63,14 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and can_shoot:
-			shoot_ball()
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Click detected!")
+			print("can_shoot: ", can_shoot)
+			print("current_ball exists: ", current_ball != null)
+			print("current_ball valid: ", is_instance_valid(current_ball) if current_ball else "N/A")
+			
+			if can_shoot:
+				shoot_ball()
 
 func update_aiming():
 	mouse_position = get_global_mouse_position()
@@ -74,11 +116,11 @@ func update_trajectory_preview():
 			break
 
 func shoot_ball():
-	if not ball_scene or not can_shoot or current_ball != null:
+	if not current_ball_scene or not can_shoot or current_ball != null:
 		return
 	
 	can_shoot = false
-	current_ball = ball_scene.instantiate()
+	current_ball = current_ball_scene.instantiate()
 	get_parent().add_child(current_ball)
 	current_ball.global_position = launch_position
 	
@@ -88,11 +130,14 @@ func shoot_ball():
 	if current_ball.has_method("launch"):
 		current_ball.launch(launch_velocity)
 	
-	# Connect to ball's cleanup to know when it's gone
+	# Update ball scenes for next shot
+	current_ball_scene = next_ball_scene
+	next_ball_scene = get_random_ball_scene()
+	update_preview_display()
+	
 	if current_ball.has_signal("tree_exited"):
 		current_ball.tree_exited.connect(_on_ball_destroyed)
 	else:
-		# Fallback - check periodically if ball still exists
 		start_ball_check()
 
 func _on_ball_destroyed():
@@ -110,7 +155,6 @@ func _check_ball_exists():
 	if current_ball == null or not is_instance_valid(current_ball):
 		current_ball = null
 		can_shoot = true
-		# Remove the timer
 		for child in get_children():
 			if child is Timer:
 				child.queue_free()

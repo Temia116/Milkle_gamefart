@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsndnj8nmagtu"]
+
+[ext_resource type="Script" uid="uid://mxo2l8csv7l0" path="res://ScoreUI.gd" id="1_iqr5w"]
+
+[node name="ScoreUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_iqr5w")

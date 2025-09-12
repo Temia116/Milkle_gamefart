@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1xgpfflybmuw"]
+[gd_scene load_steps=11 format=3 uid="uid://c1xgpfflybmuw"]
 
 [ext_resource type="Script" uid="uid://chpo1no1j1qm" path="res://game.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://h5f5t0p3fjlq" path="res://cannon.tscn" id="2_fos0i"]
 [ext_resource type="PackedScene" uid="uid://d08wf7w5ylnmd" path="res://peg.tscn" id="3_3dxm6"]
-[ext_resource type="Script" uid="uid://hegvoy5de6w2" path="res://GameManager.gd" id="4_lgr22"]
 [ext_resource type="Texture2D" uid="uid://bkflc54rt5qs2" path="res://Game assets/BACKGROUND.jpeg" id="5_fos0i"]
 [ext_resource type="Script" uid="uid://0n6dgtjx4i3u" path="res://ball_catcher.gd" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://mxo2l8csv7l0" path="res://ScoreUI.gd" id="8_03owx"]
 [ext_resource type="PackedScene" uid="uid://d0ys6lscru6qg" path="res://bucket.tscn" id="8_trn2v"]
+[ext_resource type="Script" uid="uid://cn2jxfuqxgev0" path="res://gamemanager.gd" id="9_03owx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(19.5, 1171)
@@ -22,9 +23,6 @@ z_index = -12
 position = Vector2(965.001, 559)
 scale = Vector2(0.323, 0.277)
 texture = ExtResource("5_fos0i")
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("4_lgr22")
 
 [node name="Launcher" parent="." instance=ExtResource("2_fos0i")]
 position = Vector2(950, 240)
@@ -635,3 +633,27 @@ position = Vector2(950, 690)
 position = Vector2(980, 750)
 
 [node name="Bucket" parent="." instance=ExtResource("8_trn2v")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 0.098
+anchor_bottom = 0.063
+offset_left = 17.0
+offset_top = 965.0
+offset_right = -28.16
+offset_bottom = 950.488
+script = ExtResource("8_03owx")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 64.0
+offset_bottom = 45.0
+
+[node name="game_manager" type="Node" parent="."]
+script = ExtResource("9_03owx")
+color_match_bonus = null
+regular_bucket_points = null

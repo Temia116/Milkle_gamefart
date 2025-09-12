@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://h5f5t0p3fjlq"]
+[gd_scene load_steps=7 format=3 uid="uid://h5f5t0p3fjlq"]
 
 [ext_resource type="Script" uid="uid://dtau2mhuevidi" path="res://cannon.gd" id="1_23j6s"]
 [ext_resource type="Texture2D" uid="uid://c8k5kyhj1fb5p" path="res://Game assets/RED BALL.png" id="2_23j6s"]
-[ext_resource type="PackedScene" uid="uid://chhx0225axigh" path="res://ball.tscn" id="2_72ky0"]
+[ext_resource type="PackedScene" uid="uid://chhx0225axigh" path="res://Red_Ball.tscn" id="2_72ky0"]
+[ext_resource type="PackedScene" uid="uid://ceu151hufwpnk" path="res://green_Ball.tscn" id="2_wjapt"]
+[ext_resource type="PackedScene" uid="uid://n5pj07jqq6lq" path="res://yellow_Ball.tscn" id="4_763vu"]
 [ext_resource type="Texture2D" uid="uid://bfu5raed4p5qn" path="res://Game assets/moo moo.png" id="4_odvvv"]
 
-[node name="Launcher" type="Node2D"]
+[node name="cannon" type="Node2D"]
 position = Vector2(522, 211)
 script = ExtResource("1_23j6s")
-ball_scene = ExtResource("2_72ky0")
+ball_scenes = Array[PackedScene]([ExtResource("2_wjapt"), ExtResource("2_72ky0"), ExtResource("4_763vu")])
 max_angle = 360.0
 
 [node name="CannonSprite" type="Sprite2D" parent="."]
