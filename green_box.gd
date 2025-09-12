@@ -2,12 +2,9 @@
 extends Area2D
 
 @export var bucket_color: String = "Green"  # Set this in the editor for each bucket
-var game_manager: Node
 
 func _ready():
 	body_entered.connect(_on_ball_entered)
-	# Get reference to GameManager
-	game_manager = get_node("/root/GameManager")  # Adjust path as needed
 	
 	# Auto-detect color from node name if not set
 	if bucket_color == "Red" and name != "":
@@ -21,8 +18,27 @@ func _ready():
 
 func _on_ball_entered(body):
 	if body is RigidBody2D:  # This should be your ball
-		print("Ball entered ", bucket_color, " bucket area (no scoring here)")
+		print("Ball entered ", bucket_color, " bucket area")
 		
-		# Don't modify ball physics at all - let it move naturally to BallCatcher
-		# BallCatcher will handle the scoring
-		print("Ball velocity after bucket entry: ", body.linear_velocity)
+		# Stop the ball immediately
+		body.linear_velocity = Vector2.ZERO
+		body.angular_velocity = 0.0
+		# Optional: disable physics so it can't move anymore
+		body.freeze = true
+		
+		# Find GameManager when we need it (not in _ready)
+		var game_manager = get_tree().get_first_node_in_group("game_manager")
+		if game_manager:
+			var ball_color = game_manager.get_ball_color(body)
+			game_manager.ball_entered_bucket(ball_color, bucket_color)
+			print("Called GameManager scoring: ball=", ball_color, " bucket=", bucket_color)
+		else:
+			print("GameManager not found in group!")
+			# Try alternative path as backup
+			game_manager = get_node_or_null("../GameManager")  # Adjust path as needed
+			if game_manager:
+				print("Found GameManager via path!")
+				var ball_color = game_manager.get_ball_color(body)
+				game_manager.ball_entered_bucket(ball_color, bucket_color)
+			else:
+				print("GameManager not found anywhere!")

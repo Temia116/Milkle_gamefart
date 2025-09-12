@@ -634,6 +634,9 @@ position = Vector2(980, 750)
 
 [node name="Bucket" parent="." instance=ExtResource("8_trn2v")]
 
+[node name="game_manager" type="Node" parent="."]
+script = ExtResource("9_03owx")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
@@ -652,8 +655,3 @@ offset_left = 24.0
 offset_top = 22.0
 offset_right = 64.0
 offset_bottom = 45.0
-
-[node name="game_manager" type="Node" parent="."]
-script = ExtResource("9_03owx")
-color_match_bonus = null
-regular_bucket_points = null
