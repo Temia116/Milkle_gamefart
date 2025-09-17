@@ -6,6 +6,18 @@ var is_hit: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+# In your peg script, where the peg gets destroyed
+@onready var break_sound = $BreakSound
+
+func break_peg():
+	# Play the sound
+	break_sound.play()
+	
+	# Wait for sound to finish before destroying
+	await break_sound.finished
+	
+	# Your existing destruction cod
+	queue_free()
 
 func _ready():
 	if sprite:
@@ -17,6 +29,13 @@ func hit_by_ball():
 	
 	is_hit = true
 	print("Peg hit! Breaking...")
+	
+	# Play break sound with null check
+	if break_sound:
+		print("Playing break sound")
+		break_sound.play()
+	else:
+		print("break_sound is null! Check if BreakSound node exists")
 	
 	# Disable collision immediately
 	collision.disabled = true

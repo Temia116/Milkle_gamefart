@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d08wf7w5ylnmd"]
+[gd_scene load_steps=6 format=3 uid="uid://d08wf7w5ylnmd"]
 
 [ext_resource type="Script" uid="uid://b0uxw6sgcs3a3" path="res://peg.gd" id="1_1pwoe"]
 [ext_resource type="Texture2D" uid="uid://b56up0lbvy3l4" path="res://Game assets/WHITE_BALL(PEG).png.png" id="2_1pwoe"]
+[ext_resource type="AudioStream" uid="uid://d0y04uwdhpy54" path="res://Game assets/BreakSound.wav" id="3_cavuh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1pwoe"]
 radius = 13.0
@@ -13,6 +14,10 @@ radius = 13.0
 
 [node name="Peg" type="StaticBody2D" parent="."]
 script = ExtResource("1_1pwoe")
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="Peg"]
+stream = ExtResource("3_cavuh")
+volume_db = -5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Peg"]
 shape = SubResource("CircleShape2D_1pwoe")

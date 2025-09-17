@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1xgpfflybmuw"]
+[gd_scene load_steps=12 format=3 uid="uid://c1xgpfflybmuw"]
 
 [ext_resource type="Script" uid="uid://chpo1no1j1qm" path="res://game.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://h5f5t0p3fjlq" path="res://cannon.tscn" id="2_fos0i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://mxo2l8csv7l0" path="res://ScoreUI.gd" id="8_03owx"]
 [ext_resource type="PackedScene" uid="uid://d0ys6lscru6qg" path="res://bucket.tscn" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://cn2jxfuqxgev0" path="res://gamemanager.gd" id="9_03owx"]
+[ext_resource type="AudioStream" uid="uid://c32ypygvg3qi2" path="res://Game assets/Summer - Bensound  Royalty Free Music - No Copyright Music.mp3" id="9_wkp8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(19.5, 1171)
@@ -638,20 +639,39 @@ position = Vector2(980, 750)
 script = ExtResource("9_03owx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 15
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+top_level = true
+light_mask = 512
+visibility_layer = 513
 layout_mode = 3
 anchor_right = 0.098
 anchor_bottom = 0.063
-offset_left = 17.0
-offset_top = 965.0
-offset_right = -28.16
-offset_bottom = 950.488
+offset_left = 21.0
+offset_top = 17.0
+offset_right = -24.16
+offset_bottom = 2.488
 script = ExtResource("8_03owx")
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/Control"]
+z_index = 7
 layout_mode = 0
-offset_left = 24.0
-offset_top = 22.0
-offset_right = 64.0
-offset_bottom = 45.0
+offset_left = -13.0
+offset_top = 17.0
+offset_right = 94.0
+offset_bottom = 52.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/ScoreLabel"]
+light_mask = 0
+z_index = -1
+layout_mode = 0
+offset_left = -2.0
+offset_top = -21.0
+offset_right = 181.0
+offset_bottom = 47.0
+color = Color(0.710916, 0.205203, 1, 1)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_wkp8b")
+autoplay = true

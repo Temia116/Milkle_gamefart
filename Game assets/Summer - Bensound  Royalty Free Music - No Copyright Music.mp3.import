@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c32ypygvg3qi2"
+path="res://.godot/imported/Summer - Bensound  Royalty Free Music - No Copyright Music.mp3-e6483b9b2eda793c8cb11619858c61f4.mp3str"
+
+[deps]
+
+source_file="res://Game assets/Summer - Bensound  Royalty Free Music - No Copyright Music.mp3"
+dest_files=["res://.godot/imported/Summer - Bensound  Royalty Free Music - No Copyright Music.mp3-e6483b9b2eda793c8cb11619858c61f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

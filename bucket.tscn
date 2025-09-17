@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0ys6lscru6qg"]
+[gd_scene load_steps=13 format=3 uid="uid://d0ys6lscru6qg"]
 
 [ext_resource type="Script" uid="uid://pqern1a6ftm" path="res://static_body_2d.gd" id="1_ghrs3"]
 [ext_resource type="Texture2D" uid="uid://2eka4i7agowb" path="res://Game assets/Yellow ball catcher.png" id="2_hdxih"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqph28k4luatb" path="res://Game assets/Red ball catcher.png" id="4_k837v"]
 [ext_resource type="Script" uid="uid://dk04jixt5n1pr" path="res://green_box.gd" id="6_k837v"]
 [ext_resource type="Script" uid="uid://mfj0eb3kb5ep" path="res://red_box.gd" id="7_k837v"]
+[ext_resource type="AudioStream" uid="uid://c28qstv6eucv3" path="res://Game assets/moo_sound.mp3" id="8_ycy6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghrs3"]
 size = Vector2(231.5, 9.75)
@@ -31,6 +32,10 @@ script = ExtResource("2_wlsrv")
 [node name="Yellow box catcher" type="CollisionShape2D" parent="StaticBody2D/Yellow box" groups=["bucket_color"]]
 position = Vector2(920, 995)
 shape = SubResource("RectangleShape2D_ghrs3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Yellow box"]
+position = Vector2(920, 995)
+stream = ExtResource("8_ycy6c")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1511, 1004)
@@ -90,8 +95,15 @@ script = ExtResource("6_k837v")
 position = Vector2(274, 992)
 shape = SubResource("RectangleShape2D_ghrs3")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Green box"]
+position = Vector2(274, 992)
+stream = ExtResource("8_ycy6c")
+
 [node name="Red box" type="Area2D" parent="StaticBody2D" groups=["bucket_color"]]
 script = ExtResource("7_k837v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Red box"]
+stream = ExtResource("8_ycy6c")
 
 [node name="red box catcher" type="CollisionShape2D" parent="StaticBody2D/Red box" groups=["bucket_color"]]
 position = Vector2(1511, 994.875)
