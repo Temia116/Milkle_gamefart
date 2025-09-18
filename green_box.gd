@@ -1,28 +1,36 @@
 # ColoredBucket.gd
 extends Area2D
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://title.tscn")
 
 @export var bucket_color: String = "Green"
 var moo_sound: AudioStreamPlayer2D
 
 func _ready():
 	body_entered.connect(_on_ball_entered)
-	
-	# Find the shared AudioStreamPlayer2D (it's a sibling of our parent)
-	moo_sound = get_node_or_null("../AudioStreamPlayer2D")
-	
 	if moo_sound:
-		print("MooSound found for ", bucket_color, " bucket")
-	else:
-		print("MooSound NOT found for ", bucket_color, " bucket")
+		moo_sound.bus = "SFX"
 	
-	# Auto-detect color from node name if not set
-	if bucket_color == "Red" and name != "":
-		if name.to_lower().contains("yellow"):
-			bucket_color = "Yellow"
-		elif name.to_lower().contains("green"):
-			bucket_color = "Green"
-		elif name.to_lower().contains("red"):
-			bucket_color = "Red"
+	# Try multiple paths to find the AudioStreamPlayer2D
+	var possible_paths = [
+		"../AudioStreamPlayer2D",           # Sibling of parent
+		"../../AudioStreamPlayer2D",        # Grandparent's child
+		"../../../AudioStreamPlayer2D",     # Great-grandparent's child
+		"AudioStreamPlayer2D"               # Direct child
+	]
+	
+	for path in possible_paths:
+		moo_sound = get_node_or_null(path)
+		if moo_sound:
+			print("Found MooSound at path: ", path, " for ", bucket_color, " bucket")
+			break
+		else:
+			print("Path failed: ", path)
+	
+	if not moo_sound:
+		print("MooSound NOT found anywhere for ", bucket_color, " bucket")
+		print("Current node path: ", get_path())
+		print("Parent node: ", get_parent().name if get_parent() else "no parent")
 
 func _on_ball_entered(body):
 	if body is RigidBody2D:

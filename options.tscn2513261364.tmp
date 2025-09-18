@@ -22,6 +22,12 @@ offset_top = 500.0
 offset_right = 508.0
 offset_bottom = 516.0
 
+[node name="MusicPercentLabel" type="Label" parent="Music Volume"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(2.76872, 1.28523)
+
 [node name="Sound Effects Volume" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 500.0
@@ -29,6 +35,13 @@ offset_top = 800.0
 offset_right = 508.0
 offset_bottom = 816.0
 scale = Vector2(1.02539, 1)
+
+[node name="SFXPercentLabel" type="Label" parent="Sound Effects Volume"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+rotation = -6.28319
+scale = Vector2(0.843886, 5.55179)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -38,41 +51,5 @@ offset_right = 700.0
 offset_bottom = 331.0
 scale = Vector2(2, 2)
 text = "GO BACK"
-
-[node name="MusicPercentLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 500.0
-offset_top = 500.0
-offset_right = 540.0
-offset_bottom = 523.0
-scale = Vector2(2.76872, 1.28523)
-
-[node name="SFXPercentLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 500.0
-offset_top = 800.0
-offset_right = 540.0
-offset_bottom = 823.0
-rotation = -6.28319
-scale = Vector2(0.843886, 5.55179)
-
-[node name="label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 350.0
-offset_top = 450.0
-offset_right = 463.0
-offset_bottom = 499.0
-scale = Vector2(0.997884, 1)
-text = "Music Volume:
-"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 350.0
-offset_top = 700.0
-offset_right = 523.0
-offset_bottom = 749.0
-text = "Sound Effects Volume:
-"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

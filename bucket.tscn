@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0ys6lscru6qg"]
+[gd_scene load_steps=14 format=3 uid="uid://d0ys6lscru6qg"]
 
 [ext_resource type="Script" uid="uid://pqern1a6ftm" path="res://static_body_2d.gd" id="1_ghrs3"]
 [ext_resource type="Texture2D" uid="uid://2eka4i7agowb" path="res://Game assets/Yellow ball catcher.png" id="2_hdxih"]
 [ext_resource type="Script" uid="uid://c6gjgatg8cwod" path="res://yellow_box.gd" id="2_wlsrv"]
 [ext_resource type="Texture2D" uid="uid://dtq00mtab4if6" path="res://Game assets/Green ball catcher.png" id="3_wlsrv"]
+[ext_resource type="Script" uid="uid://dy05du3276fo5" path="res://audio_stream_player_2d.gd" id="4_etf6t"]
 [ext_resource type="Texture2D" uid="uid://dqph28k4luatb" path="res://Game assets/Red ball catcher.png" id="4_k837v"]
 [ext_resource type="Script" uid="uid://dk04jixt5n1pr" path="res://green_box.gd" id="6_k837v"]
 [ext_resource type="Script" uid="uid://mfj0eb3kb5ep" path="res://red_box.gd" id="7_k837v"]
@@ -13,7 +14,7 @@
 size = Vector2(231.5, 9.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycy6c"]
-size = Vector2(231, 8)
+size = Vector2(231, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etf6t"]
 size = Vector2(11, 159.5)
@@ -36,9 +37,13 @@ shape = SubResource("RectangleShape2D_ghrs3")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Yellow box"]
 position = Vector2(920, 995)
 stream = ExtResource("8_ycy6c")
+volume_db = 5.0
+pitch_scale = 1.23
+script = ExtResource("4_etf6t")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1511, 1004)
+position = Vector2(1511, 1007)
+scale = Vector2(0.95295, 0.956917)
 shape = SubResource("RectangleShape2D_ycy6c")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
@@ -50,7 +55,7 @@ position = Vector2(1632.75, 928.25)
 shape = SubResource("RectangleShape2D_d4fsb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(920, 1004)
+position = Vector2(920, 1007)
 shape = SubResource("RectangleShape2D_ycy6c")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -62,7 +67,7 @@ position = Vector2(1041.5, 927.813)
 shape = SubResource("RectangleShape2D_d4fsb")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(273.5, 1004)
+position = Vector2(273.5, 1007)
 shape = SubResource("RectangleShape2D_ycy6c")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
@@ -92,18 +97,24 @@ texture = ExtResource("4_k837v")
 script = ExtResource("6_k837v")
 
 [node name="green box catcher" type="CollisionShape2D" parent="StaticBody2D/Green box" groups=["bucket_color"]]
-position = Vector2(274, 992)
+position = Vector2(274, 995)
 shape = SubResource("RectangleShape2D_ghrs3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Green box"]
 position = Vector2(274, 992)
 stream = ExtResource("8_ycy6c")
+volume_db = 5.0
+pitch_scale = 1.23
+script = ExtResource("4_etf6t")
 
 [node name="Red box" type="Area2D" parent="StaticBody2D" groups=["bucket_color"]]
 script = ExtResource("7_k837v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StaticBody2D/Red box"]
 stream = ExtResource("8_ycy6c")
+volume_db = 5.0
+pitch_scale = 1.23
+script = ExtResource("4_etf6t")
 
 [node name="red box catcher" type="CollisionShape2D" parent="StaticBody2D/Red box" groups=["bucket_color"]]
 position = Vector2(1511, 994.875)

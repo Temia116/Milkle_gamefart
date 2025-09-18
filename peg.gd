@@ -20,6 +20,7 @@ func break_peg():
 	queue_free()
 
 func _ready():
+	break_sound.bus = "SFX"
 	if sprite:
 		sprite.modulate = Color.ORANGE if is_orange else Color.BLUE
 

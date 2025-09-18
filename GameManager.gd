@@ -1,5 +1,6 @@
 # GameManager.gd - Updated with color matching system
 extends Node
+@onready var background_music = $BackgroundMusic
 var score: int = 0
 var orange_pegs_left: int = 0
 # Color matching bonus system
@@ -12,6 +13,7 @@ func _ready():
 	add_to_group("game_manager")  # Add this line
 	await get_tree().process_frame
 	count_orange_pegs()
+	background_music.bus = "Music"
 
 func add_score(points: int):
 	score += points
@@ -72,3 +74,4 @@ func get_ball_color(ball_node) -> String:
 				return "Yellow"
 
 	return "Unknown"
+	
